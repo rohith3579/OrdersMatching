@@ -5,7 +5,7 @@ function OrderTables() {
     const [pendingOrders, setPendingOrders] = useState([]);
     const [completedOrders, setCompletedOrders] = useState([]);
     const [updatependingOrders, setupdatePendingOrders] = useState([]);
-    const [updatecompletedOrders, setupdateCompletedOrders] = useState([]);
+    
     useEffect(() => {
         fetchOrders();
     }, []);
@@ -16,7 +16,7 @@ function OrderTables() {
             setPendingOrders(response.data.pendingOrders);
             setCompletedOrders(response.data.completedOrders);
             setupdatePendingOrders(response.data.updatedPendingOrders);
-            setupdateCompletedOrders(response.data.updatedCompletedOrders);
+            
         } catch (error) {
             console.error('There was an error fetching the orders!', error);
         }
